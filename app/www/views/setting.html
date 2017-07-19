@@ -1,0 +1,18 @@
+<ion-view view-title="Setting">
+  <ion-content>
+    <div layout="row" layout-wrap>
+      <div ng-repeat="staff in staffs">
+        <div class="staff">
+          <div class="avatar {{staff.state == 0 ? '' : staff.state == 1 ? 'in' : 'out'}}"
+               style="background-image: url('{{apiUrl + '/' + staff.avatarUrl}}')"
+               ui-sref="detail({staffId:staff._id})">
+            <img src="img/rect.png">
+          </div>
+          <p class="staff-name">
+            {{staff.name}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

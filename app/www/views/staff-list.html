@@ -1,0 +1,38 @@
+<ion-view view-title="Staffs">
+  <ion-content>
+    <div class="tracking-time">
+      <div class="line-chart" layout="column">
+        <div layout="row"  layout-align="start center" class="btn-chart">
+          <md-datepicker ng-model="critical.dateStart" md-placeholder="Date start"></md-datepicker>
+          <md-datepicker ng-model="critical.dateEnd" md-placeholder="Date end"></md-datepicker>
+          <!--<md-button  class="md-raised md-primary show-chart" ng-click="showChart()">Show Chart</md-button>-->
+          <md-button aria-label="chart" class="button button-icon md-raised chartSearch" ng-click="showChartStaffs()">
+            <i class="icon ion-podium"></i>
+          </md-button>
+        </div>
+    </div>
+    <div layout="row" layout-wrap>
+      <div ng-repeat="staff in staffs">
+        <div class="staff" >
+          <div class="avatar {{staff.state == 0 ? '' : staff.state == 1 ? 'in' : 'out'}}"
+               style="background-image: url('{{apiUrl + '/' + staff.avatarUrl}}')"
+               ui-sref="chart({staffId:staff._id})" ng-click="setStaff(staff)">
+            <img src="img/rect.png">
+          </div>
+          <p class="staff-name">
+            {{staff.name}}
+          </p>
+          <div class="motivation" layout-align="start center" layout="column">
+
+            <b>Motivation</b>
+            <div layout-align="start center" layout="row">
+              <div class="circle motivationIn">{{staff.chartService.averageCheckIn}}</div>
+              <div class="circle motivationOut">{{staff.chartService.averageCheckOut}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

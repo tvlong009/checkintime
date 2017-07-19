@@ -1,0 +1,137 @@
+@import "_variables";
+@import "_dialog";
+@font-face {
+  font-family: 'icomoon';
+  src:    url('fonts/icomoon.eot?2piik2');
+  src:    url('fonts/icomoon.eot?2piik2#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?2piik2') format('truetype'),
+  url('fonts/icomoon.woff?2piik2') format('woff'),
+  url('fonts/icomoon.svg?2piik2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-left-arrow:before {
+  content: "\e902";
+}
+.icon-photo-camera:before {
+  content: "\e900";
+}
+.icon-user-list:before {
+  content: "\e901";
+}
+
+@font-face {
+  font-family: CaviarDreams;
+  src: url('fonts/CaviarDreams.ttf');
+}
+@font-face {
+  font-family: CaviarDreamsBold;
+  src: url('fonts/Caviar_Dreams_Bold.ttf');
+}
+
+@font-face {
+  font-family: Cocogoose;
+  src: url('fonts/Cocogoose.otf');
+}
+
+.tableInfo{
+  width: 100%;
+  table-layout: fixed;
+  border-collapse:collapse;
+
+  tr{
+    &:nth-of-type(even){
+      background: #fff;
+
+    }
+
+    th{
+      background: #535353;
+      color: #fff;
+      padding: 10px 12px;
+      border-right: 1px solid #fff;
+      text-align: center;
+      &:nth-of-type(1){
+        border-left:1px solid #000 ;
+        width: 50px;
+      }
+      &:nth-of-type(2){
+        width: 150px;
+      }
+      &:last-of-type{
+        border-right: 0;
+      }
+    }
+
+    td{
+      padding: 15px 5px;
+      font-size: 14px;
+      text-align: center;
+      border: 1px solid #000;
+      .avatar{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-size: cover;
+        border: 2px solid $yellow;
+        &.in {
+          border-color: $balanced;
+        }
+        &.out {
+          border-color: $assertive;
+        }
+      }
+    }
+  }
+}
+
+md-sidenav{
+  md-list{
+    padding: 0;
+    md-list-item{
+      background-color: $dark;
+      border-bottom: 1px solid $light;
+      &.active{
+        background-color: $balanced;
+      }
+      a{
+        color: $light !important;
+      }
+    }
+  }
+}
+.tracking-time{
+  md-input-container {
+    margin: 0 10px 0 0;
+  }
+}
+
+.form-inline{
+  .form-group{
+    .input-group{
+      .input-group-addon{
+        &:nth-of-type(1){
+          width:125px;
+        }
+      }
+      width: 400px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "check_in_time",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.3.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "sweetalert": "^1.1.3",
+    "ngCordova": "^0.1.27-alpha",
+    "angular-resource": "1.5.3",
+    "angular-material": "^1.0.8",
+    "angular-translate": "^2.15.2",
+    "angular-chart.js": "^1.1.1",
+    "moment": "^2.18.1",
+    "is_js": "^0.9.0"
+  },
+  "resolutions": {
+    "angular": "1.5.3"
+  }
+}

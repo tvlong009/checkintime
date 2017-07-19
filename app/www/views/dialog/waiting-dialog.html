@@ -1,0 +1,19 @@
+<md-dialog class="loading-dialog">
+    <md-dialog-content>
+        <section class="content">
+            <div style="margin-bottom: 10%;text-align: center" ng-if="title!=null">
+                <div style="padding-bottom: 5%;font-size: 1.5em">title</div>
+                <md-divider></md-divider>
+            </div>
+            <div layout="row" layout-align="start center">
+                <div flex="25">
+                    <md-progress-circular class="md-warn waiting-circular"
+                                          md-mode="indeterminate"></md-progress-circular>
+                </div>
+                <div flex="75">
+                    {{message}}
+                </div>
+            </div>
+        </section>
+    </md-dialog-content>
+</md-dialog>

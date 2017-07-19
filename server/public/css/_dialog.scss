@@ -1,0 +1,30 @@
+md-dialog{
+  padding: 10px;
+  &.md-transition-in{
+    md-dialog-content{
+      .md-title{
+        font-family: "CaviarDreamsBold";
+        font-size: 45px;
+      }
+      .md-dialog-content-body{
+        p{
+          font-family: "CaviarDreams";
+          font-size: 30px;
+          line-height: 1.1;
+        }
+      }
+    }
+    md-dialog-actions,
+    .md-actions{
+      .md-button{
+        padding: 20px 80px 10px;
+        background-color: $yellow !important;
+        color: $light;
+        span{
+          font-family: "CaviarDreamsBold";
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

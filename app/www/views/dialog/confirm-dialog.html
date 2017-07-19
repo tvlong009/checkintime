@@ -1,0 +1,15 @@
+<md-dialog class="confirm-dialog">
+    <md-dialog-content layout="column">
+        <header class="normal">
+            <label class="title" ng-bind="title"></label>
+        </header>
+        <section class="content">
+            <label ng-bind="message"></label>
+        </section>
+        <footer layout="row">
+            <md-button class="button-yes normal" flex translate="dialog.btn_ok" ng-click="yes()"
+                       aria-label="Yes"></md-button>
+            <md-button class="button-no normal" flex translate="dialog.btn_cancel" ng-click="no()" aria-label="No"></md-button>
+        </footer>
+    </md-dialog-content>
+</md-dialog>

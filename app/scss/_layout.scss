@@ -1,0 +1,283 @@
+.bar {
+  .title {
+    font-family: "CaviarDreams";
+  }
+  .buttons {
+    span {
+      font-family: "CaviarDreams";
+    }
+  }
+}
+
+.time-area {
+  min-height: 235px;
+  position: relative;
+  margin: 0 auto;
+  &.morning {
+    background: $calm;
+  }
+  &.evening {
+    background: $positive;
+  }
+  .time {
+    font-size: 72px;
+    color: $assertive;
+    font-family: "Cocogoose";
+  }
+
+  .sun {
+    position: absolute;
+    left: 70px;
+    top: 35px;
+  }
+  .mountain {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .cloud-behind-sun-left {
+    position: absolute;
+    left: 180px;
+    top: 35px;
+  }
+
+  .cloud-behind-sun-right {
+    position: absolute;
+    right: 160px;
+    top: 50px;
+  }
+
+  .cloud-front-of-sun-left {
+    position: absolute;
+    left: 25px;
+    top: 95px;
+  }
+
+  .cloud-front-of-sun-right {
+    position: absolute;
+    left: 125px;
+    bottom: 55px;
+  }
+  .time {
+    position: absolute;
+    right: 35px;
+    bottom: 55px;
+  }
+  .tree {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+.staff-info{
+  .staff-detail {
+    background-color: $assertive;
+    padding: 15px 0;
+  }
+  background-color: $yellow;
+  .info{
+    font-size: 72px;
+    color: $light;
+    font-family: "Cocogoose";
+    margin: 90px 0 60px 0;
+    text-align: center;
+  }
+
+  .text-input{
+    input{
+      width: 80%;
+      height: 68px;
+      margin: 0 auto 25px;
+      display: block;
+      font-size: 34px;
+      line-height: 68px;
+      font-family: "CaviarDreams";
+      padding: 0 0 0 30px;
+    }
+  }
+
+  .md-button {
+    padding: 25px 0;
+    border: 1px solid $light;
+    width:80%;
+    &.btn-submit{
+      border-radius: 90px;
+    }
+    span {
+      font-family: "CaviarDreamsBold";
+      font-size: 30px;
+      vertical-align: middle;
+      text-transform: lowercase;
+      color:$light;
+    }
+  }
+}
+.staff {
+  .avatar {
+    width: 160px;
+    height: 160px;
+    &.detail{
+      width: 280px;
+      height: 280px;
+      margin: 0 auto;
+    }
+    img{
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+    }
+
+    background-size: cover;
+    border: 2px solid $yellow;
+    border-radius: 50%;
+    margin: 45px 15px 0;
+    &.in {
+      border-color: $color-check-in;
+    }
+    &.out {
+      border-color: $color-check-out;
+    }
+  }
+
+  .chart {
+    padding: 10px;
+    border: 2px solid #fca30d;
+    margin: 10px;
+    :hover {
+     cursor: pointer;
+    }
+  }
+
+  .info {
+    width:300px;
+  }
+
+
+  .staff-name {
+    text-align: center;
+    font-size: 16px;
+    padding: 5px 0 0 0;
+    margin: 0;
+    font-family: "CaviarDreamsBold";
+  }
+  .motivation {
+    b {
+      margin: 5px 0;
+    }
+    .circle{
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      line-height: 40px;
+      text-align: center;
+      margin: 0 5px;
+      color: #fff;
+
+      &.motivationIn {
+        background-color: $color-check-in;
+      }
+
+      &.motivationOut {
+        background-color: $color-check-out;
+      }
+    }
+
+  }
+}
+
+.line-chart {
+  padding: 30px;
+  .chartSearch{
+    background: $energized;
+    color: #fff;
+  }
+  .btn-chart{
+    margin: 0 0 20px;
+
+    > *{
+      margin: 0 20px 0 0;
+    }
+  }
+}
+
+
+.checking-dialog {
+  md-dialog-content{
+    min-height: 250px;
+    background-color: #f8f8f8;
+    .md-button {
+      padding: 15px;
+      &.in {
+        background-color: $balanced !important;
+      }
+      &.out {
+        background-color: $red !important;
+      }
+      i {
+        font-size: 50px;
+        vertical-align: middle;
+      }
+      span {
+        font-family: "CaviarDreams";
+        font-size: 30px;
+        vertical-align: middle;
+        text-transform: lowercase;
+      }
+    }
+
+    .check-in-buttons{
+      padding: 0 40px;
+    }
+
+    .motivation-buttons{
+      text-align: center;
+      padding-top: 60px;
+
+      > *{
+        margin: 40px 20px 0;
+        width: 80px;
+
+        > img{
+          width: 100%;
+          margin: 0 auto;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+md-dialog{
+  &.md-transition-in{
+    md-dialog-content{
+      .md-title{
+        font-family: "CaviarDreamsBold";
+        font-size: 45px;
+      }
+      .md-dialog-content-body{
+        p{
+          font-family: "CaviarDreams";
+          font-size: 30px;
+          line-height: 1.1;
+        }
+      }
+    }
+    md-dialog-actions,
+    .md-actions{
+      .md-button{
+        padding: 20px 80px 10px;
+        background-color: $yellow !important;
+        color: $light;
+        span{
+          font-family: "CaviarDreamsBold";
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

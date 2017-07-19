@@ -1,0 +1,30 @@
+<md-toolbar class="md-raised md-primary bar">
+  <div class="md-toolbar-tools">
+    <h1 class="md-flex">
+      CheckInTime System
+    </h1>
+    <span flex></span>
+    <md-button aria-label="logout" class="md-icon-button" ui-sref="login">
+      <md-icon aria-label="Lock" class="material-icons">exit_to_app</md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+<div layout="row" layout-fill>
+  <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop>
+    <md-list class="side-bar">
+      <md-list-item ui-sref="admin.tracking-staff" ng-class="{'active':currentState == 'admin.tracking-staff'}">
+        <md-icon aria-label="timeline" class="material-icons">timeline</md-icon>
+        <p>Timeline</p>
+      </md-list-item>
+      <md-list-item ui-sref="admin.tracking-staff-detail({id: '', action:'add'})" ng-class="{'active':currentState == 'admin.tracking-staff-detail'}">
+        <md-icon aria-label="Check" class="material-icons">check</md-icon>
+        <p>Check for staff</p>
+      </md-list-item>
+      <md-list-item ui-sref="change-password" ng-class="{'active':currentState == 'change-password'}">
+        <md-icon aria-label="Lock" class="material-icons">lock</md-icon>
+        <p>Change Password</p>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  <md-content ui-view layout-fill></md-content>
+</div>

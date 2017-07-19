@@ -1,0 +1,33 @@
+<ion-view view-title="{{staff.name}}">
+  <ion-content>
+    <div class="tracking-time">
+      <div class="line-chart" layout="column">
+        <div layout="row"  layout-align="start center" class="btn-chart">
+          <md-datepicker ng-model="critical.dateStart" md-placeholder="Date start"></md-datepicker>
+          <md-datepicker ng-model="critical.dateEnd" md-placeholder="Date end"></md-datepicker>
+          <!--<md-button  class="md-raised md-primary show-chart" ng-click="showChart()">Show Chart</md-button>-->
+          <md-button aria-label="chart" class="button button-icon md-raised chartSearch" ng-click="showChart()">
+            <i class="icon ion-podium"></i>
+          </md-button>
+        </div>
+
+        <canvas id="bar" class="chart chart-bar" chart-colors="colors" chart-data="chartService.series"
+                chart-labels="chartService.dateTimes" chart-series="series" chart-options="options"
+                chart-dataset-override="datasetOverride" chart-click="onClick" >
+        </canvas>
+        <br>
+        <div layout-align="start center" layout="column">
+          <p>
+            <b> Check In Average: </b>
+            <span>{{chartService.checkInStatus}}</span>
+          </p>
+          <p>
+            <b> Check Out Average: </b>
+            <span>{{chartService.checkOutStatus}}</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

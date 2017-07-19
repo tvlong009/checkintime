@@ -1,0 +1,38 @@
+<ion-view view-title="Check In Time">
+  <ion-content>
+    <div class="time-area {{isMorning == true ? 'morning': 'evening'}}">
+      <img src="img/cloud-behind-sun-left.png" class="cloud-behind-sun-left">
+      <img src="img/cloud-behind-sun-right.png" class="cloud-behind-sun-right">
+      <img src="img/sun-{{isMorning == true ? 'morning': 'evening'}}.png" class="sun">
+      <img src="img/tree.png" class="tree">
+      <img src="img/mountain.png" class="mountain" ng-hide="isMorning">
+      <img src="img/cloud-front-of-sun-left.png" class="cloud-front-of-sun-left">
+      <img src="img/cloud-front-of-sun-right.png" class="cloud-front-of-sun-right">
+
+      <div class="time">{{currentTime | date:'hh:mm:ss a'}}</div>
+      <md-button class="md-accent md-fab md-fab-bottom-right" style="bottom: -40px;" aria-label="Add"
+                 ui-sref="add">
+        <i class="icon ion-android-add" style="font-size: 50px;"></i>
+      </md-button>
+      <md-button class="md-accent md-fab md-fab-bottom-left" style="bottom: -40px;" aria-label="SLOT"
+                 ui-sref="slot">
+        <i class="icon ion-steam" style="font-size: 50px;"></i>
+      </md-button>
+    </div>
+    <md-content layout="row" layout-wrap>
+      <div ng-repeat="staff in staffs">
+        <div class="staff">
+          <div class="avatar {{staff.state == 0 ? '' : staff.state == 1 ? 'in' : 'out'}}"
+               style="background-image: url('{{apiUrl + '/' + staff.avatarUrl}}')"
+               ng-click="checkIn($event, $index, staff._id)"
+               on-hold="destroy($event, $index, staff._id)">
+            <img src="img/rect.png">
+          </div>
+          <p class="staff-name">
+            {{staff.name}}
+          </p>
+        </div>
+      </div>
+    </md-content>
+  </ion-content>
+</ion-view>

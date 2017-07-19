@@ -1,0 +1,73 @@
+<div layout="column" layout-padding>
+  <div class="tracking-time" layout="column">
+    <div layout="row"  layout-align="start center" layout-padding="">
+      <md-input-container>
+        <label>Name</label>
+        <md-select ng-model="critical.staffId">
+          <md-option ng-repeat="staff in staffs" value="{{staff._id}}">
+            {{staff.name}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Status</label>
+        <md-select ng-model="critical.type">
+          <md-option value="checkIn">In</md-option>
+          <md-option value="checkOut">Out</md-option>
+        </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Limit</label>
+        <md-select ng-model="critical.limit">
+          <md-option ng-repeat="z in size" value="{{z}}">
+            {{z}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+      <md-datepicker ng-model="critical.dateStart" md-placeholder="Date start"></md-datepicker>
+      <md-datepicker ng-model="critical.dateEnd" md-placeholder="Date end"></md-datepicker>
+    </div>
+    <div layout="row" layout-align="start center">
+      <md-button class="md-warn md-raised md-hue-2" ng-click="clear()">clear</md-button>
+      <md-button class="md-raised md-primary" ng-click="search()">search</md-button>
+      <md-button class="md-raised md-primary" ng-csv="getArray" csv-header="csvHeader" filename="gumi-staff-working-time.csv">csv</md-button>
+    </div>
+  </div>
+  <div layout="row">
+    <table class="tableInfo" border="0">
+      <tr>
+        <th>No.</th>
+        <th>Staff</th>
+        <th>Email</th>
+        <th>In</th>
+        <th>Out</th>
+        <th>Worked</th>
+      </tr>
+      <tr ng-repeat="t in timeTrackings" ui-sref="admin.tracking-staff-detail({id: t._id, action:'edit'})">
+        <td>{{$index + 1 + ((critical.pageNumber - 1) * (critical.limit == 'all' ? 1 : critical.limit))}}</td>
+        <td>
+          <div class="staff">
+            <div class="avatar {{t.state == 1 ? 'in' : 'out'}}"
+                 style="background-image: url('{{'/' + t.staffId.avatarUrl}}')">
+            </div>
+            <p class="staff-name">
+              {{t.staffId.name}}
+            </p>
+          </div>
+        </td>
+        <td>{{t.staffId.email}}</td>
+        <td>{{t.dateIn | date:'yyyy/MM/dd HH:mm:ss a'}}</td>
+        <td>{{t.dateOut | date:'yyyy/MM/dd HH:mm:ss a'}}</td>
+        <td>{{totalHours(t)}}</td>
+      </tr>
+    </table>
+  </div>
+  <div layout="row" layout-align="end center" ng-if="critical.limit != 'all'">
+    <div paging
+         page="critical.pageNumber"
+         page-size="critical.limit"
+         total="critical.total"
+         paging-action="getByPage(page)">
+    </div>
+  </div>
+</div>

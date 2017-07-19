@@ -1,0 +1,44 @@
+
+<md-dialog class="checking-dialog">
+
+  <md-dialog-content  layout="column" layout-align="center center">
+    <div class="content-dialog" layout-align="center center" layout="column" ng-show="isCheck">
+      <ion-header-bar ng-show="isCheck" class="bar-energized bar bar-header" align-title="center">
+        <div class="title title-center header-item">How are you today?</div>
+      </ion-header-bar>
+     <div layout-align="space-around center" layout="row" class="motivation-buttons">
+       <div layout="column" layout-align="center">
+         <img src="img/motivation/veryupset.png" ng-click="motivation(1)">
+         <h5>Very Upset</h5>
+       </div>
+       <div layout="column" layout-align="center">
+         <img src="img/motivation/upset.png" ng-click="motivation(2)">
+         <h5>Upset</h5>
+       </div>
+       <div layout="column" layout-align="center">
+         <img src="img/motivation/ok.png" ng-click="motivation(3)">
+         <h5>Normal</h5>
+       </div>
+       <div layout="column" layout-align="center">
+         <img src="img/motivation/happy.png" ng-click="motivation(4)">
+         <h5>Happy</h5>
+       </div>
+       <div layout="column" layout-align="center">
+         <img src="img/motivation/veryhappy.png" ng-click="motivation(5)">
+         <h5>Very Happy</h5>
+       </div>
+     </div>
+    </div>
+
+    <div layout-align="space-around center" layout="row" ng-show="!isCheck" class="check-in-buttons">
+      <md-button class="md-primary in md-raised" ng-click="checkIn()">
+        <i class="icon ion-ios-checkmark-outline"></i>
+        check in
+      </md-button>
+      <md-button class="md-primary out md-raised" ng-click="checkOut()">
+        <i class="icon ion-ios-close-outline"></i>
+        check out
+      </md-button>
+    </div>
+  </md-dialog-content>
+</md-dialog>

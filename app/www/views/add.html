@@ -1,0 +1,26 @@
+<ion-view view-title="Add new staff">
+  <ion-content class="staff-info">
+    <div class="staff-detail">
+      <div class="staff">
+        <div class="avatar detail"
+             style="background-image: url({{staff.avatarUrl}})"
+             ng-click="takePicture()">
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="info">STAFF’S INFO</h2>
+      <label class="text-input">
+        <input type="text" ng-model="staff.name" placeholder="your name">
+      </label>
+      <label class="text-input">
+        <input type="email" ng-model="staff.email" placeholder="email">
+      </label>
+      <div layout="row" layout-align="center center">
+        <md-button class="btn-submit" ng-click="submit()">
+          Add now
+        </md-button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

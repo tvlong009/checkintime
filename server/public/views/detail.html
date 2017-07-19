@@ -1,0 +1,40 @@
+<div layout="column" layout-padding>
+  <div layout="row">
+    <md-input-container ng-if="action == 'add'" flex="25">
+      <label>Staff Name</label>
+      <md-select ng-model="timeTracking.staffId">
+        <md-option ng-repeat="staff in staffs" value="{{staff._id}}">
+          {{staff.name}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+  <h3  ng-if="action == 'edit'">{{timeTracking.staff.name}}</h3>
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">Check in</div>
+        <input type="text" class="form-control" datetime-picker="yyyy-MM-dd hh:mm:ss a" ng-model="timeTracking.dateIn" is-open="isOpen1"/>
+        <div class="input-group-addon" ng-click="openCalendar($event, 1)"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon">Check Out</div>
+        <input type="text" class="form-control" datetime-picker="yyyy-MM-dd hh:mm:ss a" ng-model="timeTracking.dateOut" is-open="isOpen2"/>
+        <div class="input-group-addon" ng-click="openCalendar($event, 2)"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div layout="row" layout-align="start center">
+    <md-button class="md-raised md-primary" ui-sref="admin.tracking-staff">back</md-button>
+    <md-button class="md-raised md-primary" ng-click="add()" ng-if="action == 'add'">add</md-button>
+    <md-button class="md-raised md-primary" ng-click="update()" ng-if="action == 'edit'">update</md-button>
+    <md-button class="md-warn md-raised md-hue-2" ng-click="deleteTimeWorking()" ng-if="action == 'edit'">delete</md-button>
+
+  </div>
+</div>
